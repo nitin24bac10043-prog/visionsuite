@@ -1,0 +1,22 @@
+# =========================================================================
+# VisionSuite configuration
+# Tweak these values to change runtime behaviour without editing any code.
+# =========================================================================
+
+general:
+  output_dir: outputs          # where annotated media, reports and logs go
+  log_level: INFO              # DEBUG | INFO | WARNING | ERROR
+
+face_detection:
+  scale_factor: 1.1            # Haar cascade image pyramid scale factor
+  min_neighbors: 5             # higher = fewer false positives, may miss faces
+  blur_kernel: 35              # Gaussian blur kernel size used for anonymisation
+
+people_detection:
+  hit_threshold: 0.0           # HOG SVM decision threshold (lower = more detections)
+  win_stride: 8                # sliding window stride in pixels
+
+digit_classifier:
+  model_path: models/digit_classifier.pkl
+  test_size: 0.2               # fraction of the dataset held out for evaluation
+  random_state: 42             # seed for reproducible train/test splits
